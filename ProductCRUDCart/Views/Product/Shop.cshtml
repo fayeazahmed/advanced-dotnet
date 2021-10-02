@@ -1,0 +1,27 @@
+﻿@model List<ProductCRUDCart.Models.Entities.Product>
+@{
+    ViewBag.Title = "Shop";
+}
+
+<h2>Shop</h2>
+<hr>
+<h3>All Product</h3>
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Qty</th>
+        <th>Price</th>
+        <th>Description</th>
+    </tr>
+
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.Name</td>
+            <td>@p.Qty</td>
+            <td>@p.Price</td>
+            <td>@p.Descr</td>
+            <td><a href="/Product/AddToCart/@p.Id" class="btn btn-success">Add to cart</a></td>
+        </tr>
+    }
+</table>
